@@ -1,0 +1,292 @@
+/* --- Global Variables and Body --- */
+:root {
+    --primary-orange: #f98c40;
+    --primary-green: #299989;
+    --text-dark: #2c3e50;
+    --text-light: #888;
+    --bg-light: #ffffff;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+     font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    /* Prevents scrolling on the main page for the split layout */
+    overflow: hidden; 
+}
+
+/* --- Main Layout Containers --- */
+.split-screen-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/images/Line.png');
+}
+
+.left-column {
+    flex: 0 0 60%;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.gallery-column {
+    flex: 0 0 40%;
+    height: 100vh;
+}
+
+/* --- Content inside Left Column --- */
+.left-column .navbar {
+    flex-shrink: 0; /* Prevents nav from shrinking */
+}
+.left-column .hero-content {
+    flex-grow: 1; /* Allows main content to fill available space */
+    display: flex;
+    align-items: center; /* Vertically centers the text block */
+   
+}
+.left-column .stats-bar {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 1rem;
+}
+
+
+/* --- Navigation Bar --- */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-dark) !important;
+}
+.navbar-brand i {
+    color: var(--primary-green);
+    margin-right: 5px;
+}
+.nav-link {
+    font-weight: 500;
+    color: var(--text-light) !important;
+    margin-left: 1.5rem;
+}
+.nav-link:hover {
+    color: var(--text-dark) !important;
+}
+
+/* --- Hero Text & CTA --- */
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+}
+.hero-text h1 .plus-icon {
+    color: var(--primary-orange);
+    font-size: 2.5rem;
+}
+.hero-text p {
+    font-size: 1rem;
+    color: var(--text-light);
+ 
+    
+}
+.student-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+.student-avatars img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--bg-light);
+    margin-left: -15px;
+}
+.student-avatars img:first-child { margin-left: 0; }
+.student-text {
+    margin-left: 3rem;
+    font-weight: 600;
+}
+.student-text span {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-left: 0;
+}
+.btn-main {
+    background-color:#2F584E;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    font-weight: 600;
+}
+.journey-link {
+    color: var(--text-dark);
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
+.journey-link i {
+    color: #ffffff;
+    background-color:#FF9257;
+    padding: 18px;
+    border-radius: 50%;
+   
+}
+
+/* --- Stats Bar --- */
+.stats-bar {
+
+    background-color: var(--primary-orange);
+    padding-left: 2rem;  /* Optional: add inner padding for footer content */
+    padding-right: 2rem;
+    color: white;
+}
+.footer-wrapper {
+    margin-left: -3rem;   /* Cancels the left-column padding */
+    margin-right: -3rem;  /* Cancels the right padding */
+    margin-bottom: -2rem;
+}
+
+
+.stat-item {
+    padding: 3rem 3rem;
+    position: relative;
+}
+.stat-item h2 {
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+.stat-item p { margin: 0; }
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 50%;
+    background-color: #F7BE2C;
+}
+
+.gallery-column {
+  background-color: #f7f8fb;
+  background-image: url('/images/bg-gallery.png'); /* Replace with your background */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+}
+
+.gallery-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+   padding: 1rem;
+}
+
+/* Base styles */
+.gallery-item {
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* Image backgrounds (set here instead of inline) */
+.img-1 { background-image: url('/images/v1_42.png'); }
+.img-2 { background-image: url('/images/v1_46.png'); }
+.img-3 { background-image: url('/images/v1_55.png'); }
+.img-4 { background-image: url('/images/v1_58.png'); }
+.img-5 { background-image: url('/images/v1_49.png'); }
+.img-6 { background-image: url('/images/v1_52.png'); }
+
+/* Shape styles */
+.shape-circle {
+  border-radius: 50%;
+}
+
+.shape-rounded {
+  border-radius: 25px;
+}
+
+.shape-blob-top-left {
+  border-radius: 60px 60px 150px 60px;
+}
+
+.shape-blob-top-right {
+  border-radius: 150px 60px 60px 60px;
+}
+
+.shape-square {
+  border-radius: 10px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 767.98px) {
+  .gallery-item {
+    padding-top: 100%;
+  }
+}
+
+
+
+
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 991.98px) {
+    body, html {
+        height: auto;
+        overflow-y: auto; /* Re-enable vertical scrolling on mobile */
+    }
+    .split-screen-container {
+        flex-direction: column; /* Stack columns vertically */
+        height: auto;
+    }
+    .left-column, .gallery-column {
+        flex: 1 1 100%; /* Make each column full width */
+        height: auto;
+        padding: 1rem;
+    }
+    .hero-text {
+        text-align: center; text-align: center;
+    }
+    .student-info, .cta-buttons {
+        justify-content: center;
+    }
+    .stat-item{
+ text-align: center;
+    }
+    .stat-item:not(:last-child)::after {
+        display: none; /* Hide dividers */
+    }
+}
+/* Make footer stats horizontal without scroll */
+@media (max-width: 767.98px) {
+  .stats-bar .row {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .stat-item {
+    flex: 1 1 30%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .stat-item:not(:last-child)::after {
+    display: none; /* Remove dividers */
+  }
+}
+
